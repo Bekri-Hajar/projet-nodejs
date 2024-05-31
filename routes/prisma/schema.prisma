@@ -1,0 +1,56 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url= env("DATABASE_URL")
+}
+
+enum role{
+  Author
+  Admin
+}
+ model utilisateur {   
+  name String
+  password String
+  email String @id 
+  status role 
+  articles article[]
+  
+}
+
+model categorie {
+  name String @id
+  articles article[]
+}
+
+ model article{
+  title String @id
+  content String @db.Text
+  createdAt DateTime
+  updatedAt DateTime
+  publishedAt DateTime
+  utilisateur    utilisateur @relation( fields: [user_email], references: [email])
+  user_email String 
+  commentaires commentaires[]
+  categories categorie[]
+}
+
+
+ model commentaires{
+  name String @id
+  articles    article @relation(fields: [art_id], references: [title])
+  art_id String 
+  
+}
+//Définitions des relations
+// Un article est associé à un et un seul utilisateur (Cet utilisateur devrait avoir le role AUTHOR)
+//Un utilisateur (ayant le rôle AUTHOR) peut écrire zéro ou plusieurs articles
+//Un article est associé à zéro ou plusieurs catégories
+//Une catégorie est associée à zéro ou plusieurs articles
+//Un commentaire est associé à exactement un article
+//Un article est associé à zéro ou plusieurs commentaires.
+

@@ -1,0 +1,577 @@
+.body {
+    background-color: #313157;
+  }
+
+  /* Headlines */
+  .h1 {
+    color: #fffffe;
+  }
+  
+  /* Paragraphs */
+  .p {
+    color: #94a1b2;
+  }
+  
+  /* Buttons */
+  .button {
+    background-color: #7f5af0;
+    color: #fffffe;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Illustrations */
+  /* Stroke color */
+  .stroke {
+    stroke: #010101;
+  }
+  
+  /* Main color */
+  .main {
+    fill: #fffffe;
+  }
+  
+  /* Highlight color */
+  .highlight {
+    fill: #7f5af0;
+  }
+  
+  /* Secondary color */
+  .secondary {
+    fill: #72757e;
+  }
+  
+  /* Tertiary color */
+  .tertiary {
+    fill: #2cb67d;
+  }
+
+/* CSS module for header styles (e.g., header.module.css) */
+
+.header {
+  position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+  background-color: #ffffff;
+  display: flex; /* Set display to flex */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space items evenly */
+}
+
+.logo img {
+  width: 100px; /* Adjust the width of the logo */
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  display: flex; /* Display list items horizontally */
+}
+
+.navList li {
+  margin-right: 20px; /* Adjust spacing between list items */
+}
+
+.navList li:last-child {
+  margin-right: 0; /* Remove margin from the last list item */
+}
+
+.navList li a {
+  text-decoration: none;
+  color: #8908b5; /* Adjust link color */
+}
+
+.searchBar {
+  display: flex; /* Display search bar items horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+.searchBar input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; /* Adjust width as needed */
+}
+
+.searchBar button {
+  padding: 5px 10px;
+  background-color:#8908b5; /* Adjust button color */
+  color: #e8e3e9;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 5px; /* Adjust spacing */
+}
+
+.searchBar button:hover{
+background-color: #002fff;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 10px;
+  padding:40px;
+}
+
+.social-link span {
+  color: #e8f4b0; /* Inherits color from parent */
+}
+
+/* Define specific colors for social links */
+.twitter {
+  color: #eaf8b3;
+}
+
+.facebook {
+  color: #eaf8b3;
+}
+
+.instagram {
+  color: #eaf8b3;
+}
+
+
+.introBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Add margin bottom for spacing */
+}
+
+.paragraph {
+  flex: 1;
+  padding-right: 20px; /* Adjust spacing between paragraph and image */
+}
+
+.image {
+  flex: 1;
+  text-align: right;
+}
+
+.image img {
+  max-width: 100%; }
+
+  .navList li a:hover {
+    color: #002fff; /* Change the color to your desired color */
+}
+
+.additionalContent {
+  margin-top: 20px;
+}
+
+.additionalContent p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.additionalButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #3206e1;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movingImages {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.movingImage {
+  width: 100px; /* Adjust image size as needed */
+  height: auto;
+  margin: 0 10px;
+  transition: transform 0.3s ease; /* Add smooth transition effect */
+}
+
+.movingImage:hover {
+  transform: scale(1.1); /* Increase image size on hover */
+}
+
+.heroBanner {
+  position: relative;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay background color */
+}
+
+.overlayText {
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+
+.overlayButton {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #2c0b4c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px; /* Adjust the spacing as needed */
+  
+}
+.overlayButton:hover {
+  background-color: #e3ee7c; /* Change the color on hover */
+  color: #2c0b4c;
+}
+
+.categoryList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Category item styles */
+.categoryItem {
+  flex: 0 0 calc(33.33% - 20px); /* Adjust the width as needed */
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Category content styles */
+.categoryContent {
+  position: relative;
+  height: 200px; /* Set a fixed height for the category item */
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Category button styles */
+.categoryButton {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color */
+  color: #fff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the category button */
+.categoryContent:hover .categoryButton {
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the hover background color */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .categoryItem {
+      flex-basis: calc(50% - 20px); /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryItem {
+      flex-basis: calc(100% - 20px); /* Adjust for even smaller screens */
+  }
+}
+
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+  flex-wrap: wrap; /* Allow content to wrap to next line if necessary */
+}
+
+.content {
+  /* Your content styles */
+  flex-basis: calc(33.33% - 10px); /* Set width for each content block */
+  margin: 0 5px; /* Add some space between content blocks */
+  text-align: center; /* Center-align content */
+}
+
+.inputGroup {
+  margin-bottom: 15px;
+  color: #d3f9aa; 
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center; /* Align text content to the center */
+  border: 2px solid #eced9b; /* Add a border to the form with a specific color */
+  padding: 5px;
+  
+  background-color: rgba(255, 255, 255, 0.3); /* Set the background color to white with 50% opacity */
+}
+
+.inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.content h2 {
+  text-align: center; /* Center headings within content blocks */
+}
+
+.categoryTitle{
+  color:#8908b5;
+  margin: 100 100px;
+}
+.categoryLines {
+  border-top: 2px solid #000; /* Adjust color and thickness as needed */
+  margin-top: 10px; /* Adjust spacing as needed */
+  margin-bottom: 10px; /* Adjust spacing as needed */
+}
+
+.categoryTitle h2 strong {
+  font-weight: bold; /* Ensure title is bold */
+}
+.categoryTitleContainer {
+  display: flex;
+  align-items: center;
+  margin:50px;
+}
+.categoryLine {
+  flex: 1;
+  height: 2px;
+  background-color: #731a7e; /* Adjust color as needed */
+}
+
+
+.bestArticleBlock {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Vertically center content */
+  padding: 20px;
+}
+
+.bestArticleBlock2 {
+  display: flex; /* Use Flexbox */
+  align-items: center; /* Vertically center content */
+  padding: 20px;
+}
+
+.bestArticleImage {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Add right margin to separate image from text */
+}
+
+.bestArticleContent {
+  flex: 1; /* Allow content to grow to fill remaining space */
+}
+
+.bestArticleTitle {
+  font-size: 1.2rem; /* Adjust the font size as needed */
+  margin-bottom: 10px; /* Add some bottom margin */
+}
+
+.readMoreButton {
+  background-color: #880b86; /* Adjust the button color as needed */
+  color: #ecf0d6; /* Adjust the button text color as needed */
+  border: none;
+  padding: 10px 20px; /* Adjust the button padding as needed */
+  font-size: 1rem; /* Adjust the button font size as needed */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+
+.readMoreButton:hover {
+  background-color: #ecf0d6; /* Adjust the hover color as needed */
+  color: #880b86;
+}
+
+.Art{
+  color:#010101;
+  font-size: large;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}.footer {
+  background-color: #2c0b4c;
+  color: #fff;
+  padding: 50px 0; /* Add padding to the top and bottom */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-content .content {
+  flex-basis: calc(33.33% - 20px); /* Adjust width for each content block */
+  margin: 0 10px; /* Add margin around content blocks */
+  text-align: center;
+}
+
+.footer-content h2 {
+  color: #8908b5; /* Adjust heading color */
+  margin-bottom: 20px; /* Add margin below headings */
+}
+
+.footer-content p {
+  font-size: 16px; /* Adjust paragraph font size */
+  line-height: 1.6; /* Increase line height for better readability */
+}
+
+.footer-content .form {
+  margin-top: 20px; /* Add margin above the form */
+}
+
+.footer-content .inputGroup {
+  margin-bottom: 15px;
+  color: #d3f9aa; 
+}
+
+.footer-content .inputGroup label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-content .additionalButton {
+  background-color: #880b86; /* Adjust button color */
+  color: #ecf0d6; /* Adjust button text color */
+  border-radius: 5px;
+  padding: 10px 20px; /* Adjust button padding */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-content .additionalButton:hover {
+  background-color: #ecf0d6; 
+  color: #880b86;
+}
+.footer-content h2 {
+  color: #8908b5;
+  margin-bottom: 20px;
+  position: relative; /* Position relative to enable absolute positioning for ::after pseudo-element */
+}
+
+.footer-content h2::after {
+  content: ""; /* Empty content */
+  position: absolute; /* Position absolute to place the line relative to the h2 element */
+  bottom: -10px; /* Adjust the distance from the bottom */
+  left: 50%; /* Align the line to the center */
+  transform: translateX(-50%); /* Center the line horizontally */
+  width: 50px; /* Adjust the width of the line */
+  height: 2px; /* Adjust the height of the line */
+  background-color: #8908b5; /* Adjust the color of the line */
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 20px; /* Add margin between social media links */
+  padding: 200px; /* Add padding around each social media link */
+}
+.copyright {
+  display: block;
+  margin: 20px auto; /* Auto margins for centering */
+  color: #fff; /* Adjust text color */
+  font-size: 14px; /* Adjust font size */
+  text-align: center; /* Ensure text alignment is centered */
+}
+
+.articlesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.article {
+  width: 300px; /* Adjust width as needed */
+  margin: 20px;
+  text-align: center;
+}
+
+.article img {
+  width: 100%;
+  height: 200px; /* Fixed height for image container */
+  object-fit: cover; /* Fill the container while preserving aspect ratio */
+  border-radius: 8px; /* Add border radius for rounded corners */
+  margin-bottom: 10px;
+}
+
+.article h3 {
+  font-family: 'Arial', sans-serif; /* Change font family */
+  font-size: 1.5rem; /* Adjust font size */
+  margin-bottom: 10px;
+}
+
+.article p {
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.5; /* Adjust line height for better readability */
+  text-align: justify; /* Justify paragraphs */
+}
+
+.secondary h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Change font family */
+  font-size: 2rem; /* Adjust font size */
+  font-weight: bold; /* Make the title bold */
+  color: #333; /* Change color */
+  text-transform: uppercase; /* Convert text to uppercase */
+  letter-spacing: 2px; /* Add letter spacing */
+  margin-top: 30px;
+  margin-bottom: 30px; /* Add space below the title */
+  text-align: center; /* Center align the title */
+  text-shadow: 2px 2px 4px rgba(149, 100, 234, 0.5); /* Add text shadow */
+}
+
+.bestAuthorBlock,
+.BestAuthorBlock2,
+.BestAuthorBlock3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px; /* Adjust width as needed */
+    margin: 20px;
+}
+
+.bestAuthorProfile {
+   
+      width: 150px; 
+      height: 150px; 
+      object-fit: cover; 
+      border-radius: 50%; /* For round shape */
+      margin-bottom: 10px;
+  
+}
+
+.description {
+    text-align: center;
+}
+
+.authorBlocksContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.footheaders{
+  color: #ffffff;
+  text-decoration: underline;
+  margin-bottom: 20px;
+}

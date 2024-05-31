@@ -1,16 +1,13 @@
+
 const express = require('express');
 const app = express();
 app.use(express.json());
+const router = express.Router();
 
+router.get('/',(req, res) => {
+    res.json({message: 'commentaire'})
+});
 
-app.get('/',(req, res) => {
-    res.take('user' + req.params.id),
-    res.json({message: 'nouveau commment'});
-});
-app.get('/id',(req, res) => {
-    res.send('user' + req.params.id),
-    res.json({message: 'nouveau commment'});
-});
 
 //Ajouter un nouveau commentaire envoyée sous format JSON
 app.use(express.json()); // parse json body content
@@ -62,8 +59,8 @@ app.delete('/:id', function (req, res) {
 });
 
 
-app.listen(5003, () => console.log('Listening on port 5003 '));
 
+module.exports = router;
 
 
 

@@ -1,16 +1,39 @@
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 const express = require('express');
+const router = express.Router();
 const app = express();
 app.use(express.json());
 
 
-app.get('/user/:id',(req, res) => {
-    res.send('user' + req.params.id)
-})
+router.get('/',(req, res) => {
+    res.json({message: "article "})
+});
 
+
+
+app.get('/api/entity/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+      // Utilisez Prisma pour récupérer une entité par son ID
+      const entity = await prisma.entity.findUnique({
+        where: {
+          id: parseInt(id),
+        },
+      });
+      if (!entity) {
+        return res.status(404).json({ error: 'Entity not found' });
+      }
+      res.json(entity);
+    } catch (error) {
+      console.error('Error fetching entity by ID:', error);
+      res.status(500).json({ error: 'An error occurred while fetching the entity' });
+    }
+  });
 //Ajouter un nouveau article envoyé sous format JSON
 app.use(express.json()) // parse json body content
 
-app.post('/api/articles', (req, res) => {
+app.post('/', (req, res) => {
     const newArticle = {
         id: articles.length + 1,
         title: req.body.title,
@@ -23,7 +46,7 @@ app.post('/api/articles', (req, res) => {
     res.status(201).json(newArticle)
 })
 //Patch/ Mettre à jour l’article envoyé dans le corps de la requête.
-app.patch("/:id", function (req, res) {
+app.patch("/", function (req, res) {
     let found = data.find(function (item) {
         return item.id === parseInt(req.params.id);
     });
@@ -68,4 +91,4 @@ app.delete('/:id', function (req, res) {
 });
 
 
-app.listen(8000, () => console.log('Listening on port 8000 '))
+module.exports = router;

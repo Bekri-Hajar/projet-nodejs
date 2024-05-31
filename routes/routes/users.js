@@ -1,31 +1,33 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 const express = require('express');
-const router = express.Router();
 const app = express();
 app.use(express.json());
+const router = express.Router();
 
-
-router.get('/',(req, res) => {
-    res.json({message: 'categorie'})
+app.get('/',(req, res) => {
+    
+    res.json({message: 'nouveau utilisateur'});
 });
 
-//Ajouter une nouvelle catégorie envoyée sous format JSON
+//Ajouter un nouveau utilisateur envoyée sous format JSON
 app.use(express.json()) // parse json body content
 
 app.post('/', (req, res) => {
-    const newCategorie = {
-        id: categories.length + 1,
-        name: req.body.name
+    const newUser = {
+        id: users.length + 1,
+        name: req.body.name,
+        password: req.body.password,
+        role:req.body.role
     }
-    users.push(newUser)
+    articles.push(newUser)
     res.status(201).json(newUser)
     
 })
 
 
 
-//Patch/ Mettre à jour la catégorie envoyé dans le corps de la requête.
+//Patch/ Mettre à jour l'utilisateur.
 app.patch("/", function (req, res) {
     let found = data.find(function (item) {
         return item.id === parseInt(req.params.id);
@@ -43,7 +45,7 @@ app.patch("/", function (req, res) {
     }
 });
 
-//Supprimer la catégorie ayant l’id donné
+//Supprimer l'utilisateur ayant l’id donné
 app.delete('/:id', function (req, res) {
     let found = data.find(function (item) {
         return item.id === parseInt(req.params.id);

@@ -1,0 +1,1 @@
+var pathToFaker = require.resolve('faker');
